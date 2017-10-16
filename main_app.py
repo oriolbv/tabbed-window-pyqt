@@ -1,19 +1,11 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QToolBar, QAction, QMenu
-from src.tabbed_window import TabbedWindow
+import sys
+from PyQt5.QtWidgets import QApplication
+from src.tabbed_windows import TabbedWindows
 
 if __name__ == '__main__':
     # Create application
-    a = QApplication()
+    a = QApplication(sys.argv)
 
-    # Create tabbed views
-    red = QMainWindow()
-    green = QMainWindow()
-    blue = QMainWindow()
+    tabbed_windows = TabbedWindows()
 
-    # w = TabbedWindow()
-
-    red.setStyleSheet("QMainWindow { background-color: red; }")
-    blue.setStyleSheet("QMainWindow { background-color: blue; }")
-    green.setStyleSheet("QMainWindow { background-color: green; }")
-
-
+    a.exec()
